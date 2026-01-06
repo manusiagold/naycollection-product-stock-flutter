@@ -1,10 +1,11 @@
 // // ignore_for_file: use_key_in_widget_constructors
-
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter/material.dart';
 import 'login_page.dart'; // Import LoginPage
 import 'register_page.dart'; // Import RegisterPage
 
 void main() {
+  dotenv.load(fileName: ".env");
   runApp(MyApp());
 }
 

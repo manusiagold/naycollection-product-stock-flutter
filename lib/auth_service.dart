@@ -1,16 +1,13 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'home_page.dart'; // Import halaman home
 
+// URL server backend Anda
+final baseUrl = dotenv.env['API_URL'];
+
 class AuthService {
-  // URL server backend Anda
-  // final String baseUrl =
-  //     'https://berberidaceous-goldie-subgular.ngrok-free.dev'; // Ganti dengan URL server Anda jika tidak menggunakan localhost
-
-  final String baseUrl =
-      'http://10.0.2.2:4000'; // Ganti dengan URL server Anda jika tidak menggunakan localhost
-
   // Fungsi untuk registrasi pengguna
   Future<String> register(String name, String password) async {
     try {
